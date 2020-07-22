@@ -1,0 +1,45 @@
+/*Tablet*/
+
+@media (min-width: 600px) and (max-width: 1023px){
+	header{		
+		flex-direction: column;
+		}
+	.section-one, .section-two, .section-three {
+		width: 33%;
+		border-top: 1px solid #eee;
+	}
+}
+
+/*Laptop and Desktop*/
+
+@media (min-width: 1024px) and (orientation: landscape){
+	.container{
+		width: auto;
+	}
+
+	header {
+		height: 110px;
+		width: 100%;
+	}
+
+	header h1{
+		width: 30%;
+		float: left;
+		border-bottom: none;
+	}
+
+	header nav{
+		width: 70%;
+		float: right;
+		text-align: right;	
+	}
+
+	header nav ul li{
+		display: inline;	
+	}
+
+	.section-one, .section-two, .section-three {
+		width: 33%;
+		border-top: 1px solid #eee;
+	}	
+}
