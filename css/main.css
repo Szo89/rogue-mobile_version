@@ -50,12 +50,11 @@ p {
 
 /*The widths are in a percentage!*/
 header {
-	border-bottom: 3px solid #77a466;
 	margin: 0 auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-flow: column;
+	flex-direction: column;
 }
 
 header h1 {
@@ -69,6 +68,7 @@ header h1 span {
 
 header nav {
 	padding: 2em 0;
+	width: 100%;
 }
 header nav ul {
 	margin: 0;
@@ -95,10 +95,9 @@ header nav ul li a{
 .bottom-section {
 	margin: 0 auto;
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-flow: row wrap;
-	
+	justify-content: left;
+	align-items: left;
+	flex-flow: row wrap;	
 }
 
 .main-image {
@@ -106,6 +105,7 @@ header nav ul li a{
 }
 .main-image img {
 	width: 100%;
+	border-top: 3px solid #77a466;
 	border-bottom: 3px solid #77a466;
 }
 
@@ -129,18 +129,16 @@ header nav ul li a{
 	border-top: 1px solid #eee;
 }
 
-.section-one h4 {
+.section-one h4,
+.section-two h4,
+.section-three h4 {
 	padding: 10px 0;
 }
 
-.section-two {
-	border-left: 1px solid #eee;
-	border-right: 1px solid #eee;
-}
-
-.section-two h4,
-.section-three h4 {
-	padding: 10px 30px;
+.section-one p,
+.section-two p,
+.section-three p {
+	padding: 10px 0;
 }
 
 .menu {
@@ -178,3 +176,74 @@ footer span {
 }
 
 /*Responsive layout!*/
+
+/*Tablet*/
+
+@media (min-width: 600px) and (max-width: 1023px){
+	.bottom-section{
+        justify-content: space-between;
+        align-items: flex-start;
+        border-top: 1px solid #eee;
+    }
+
+    .section-one,
+    .section-two,
+    .section-three {
+        border-top: none;
+        flex-basis: 30%;
+    }
+
+    .section-two {
+        border-left: 1px solid #eee;
+        border-right: 1px solid #eee;
+        padding: 0 20px;
+    }
+}
+
+/*Laptop and Desktop*/
+
+@media (min-width: 1024px) and (orientation: landscape){
+	.container{
+		width: auto;
+	}
+
+	header {
+		justify-content: space-around;
+	}
+
+	header h1{
+		width: 100%;
+		float: left;
+		border-bottom: none;
+		text-align: center;
+	}
+
+	header nav{
+		width: 100%;
+		float: right;
+	}
+
+	header nav ul li{
+		display: inline;		
+		text-align: center;	
+	}
+
+	.bottom-section{
+        justify-content: space-between;
+        align-items: flex-start;
+        border-top: 1px solid #eee;
+    }
+
+    .section-one,
+    .section-two,
+    .section-three {
+        border-top: none;
+        flex-basis: 30%;
+    }
+
+    .section-two {
+        border-left: 1px solid #eee;
+        border-right: 1px solid #eee;
+        padding: 0 20px;
+    }
+}
